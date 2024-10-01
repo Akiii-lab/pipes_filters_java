@@ -20,11 +20,11 @@ public class FiltroAtencion implements Filtro {
         return null;
     }
 
-    public ArrayList<Paciente> FiltroCitas(ArrayList<Paciente> pacientes) {
+    public ArrayList<Paciente> FiltroCitas() {
         return Citas;
     }
 
-    public ArrayList<Paciente> FiltroUrgencias(ArrayList<Paciente> pacientes) {
+    public ArrayList<Paciente> FiltroUrgencias() {
         return Urgencias;
     }
 }

@@ -18,10 +18,10 @@ public class FiltroSeparacionUrg implements Filtro {
         }
         return null;
     }
-    public ArrayList<Paciente> FiltroUrgencias(ArrayList<Paciente> Urgencias) {
+    public ArrayList<Paciente> FiltroUrgencias() {
         return Urgencias;
     }
-    public ArrayList<Paciente> FiltroAdultomayor(ArrayList<Paciente> adultomayor) {
+    public ArrayList<Paciente> FiltroAdultomayor() {
         return adultomayor;
     }
 }

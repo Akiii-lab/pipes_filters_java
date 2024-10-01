@@ -44,15 +44,17 @@ public class Main {
 
         //ordenar las citas y enviar la informacion por un tubo
         Tubo prioridadCitas = new Tubo(new FiltroPrioridadCitas());
-        ArrayList<Paciente> citas = prioridadCitas.transfer(filtroAtencion.FiltroCitas(pacientes));
+        ArrayList<Paciente> citas = prioridadCitas.transfer(filtroAtencion.FiltroCitas());
 
         //separar la urgencia del adulto mayor de las demas
         FiltroSeparacionUrg filtroSeparacionUrg = new FiltroSeparacionUrg();
+        filtroSeparacionUrg.filtrar(filtroAtencion.FiltroUrgencias());
+
         Tubo prioridadUrgencias = new Tubo(new FiltroPrioridadUrg());
-        ArrayList<Paciente> urgenciasx = prioridadUrgencias.transfer(filtroSeparacionUrg.FiltroUrgencias(filtroAtencion.FiltroUrgencias(pacientes)));
+        ArrayList<Paciente> urgenciasx = prioridadUrgencias.transfer(filtroSeparacionUrg.FiltroUrgencias());
 
         Tubo adultomayor = new Tubo(new FiltroPrioridadUrg());
-        ArrayList<Paciente> urgadultomayor = adultomayor.transfer(filtroSeparacionUrg.FiltroAdultomayor(filtroAtencion.FiltroUrgencias(pacientes)));
+        ArrayList<Paciente> urgadultomayor = adultomayor.transfer(filtroSeparacionUrg.FiltroAdultomayor());
 
         //imprimir resultados
         System.out.println("////////////////////////////////////////////////Citas: ////////////////////////////////////////////////");
